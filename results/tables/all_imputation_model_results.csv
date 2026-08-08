@@ -1,0 +1,5 @@
+Imputation,Model,Scaling,Best_Params,R2_SCORE,RMSE
+mean,LinearRegresion,Yes,Default (No params),0.2826,2.3452
+median,LinearRegresion,Yes,Default (No params),0.1061,2.6179
+mice,LinearRegresion,Yes,Default (No params),-2.6075,5.2591
+knn,LinearRegresion,Yes,Default (No params),-6.7359,7.7013

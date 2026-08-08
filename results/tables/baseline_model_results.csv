@@ -1,0 +1,5 @@
+Model,Scaling,R2_SCORE,RMSE
+LinearRegression,Yes,0.1731,2.5101
+DecisionTree,No,0.2705,2.3576
+RandomForest,No,0.3423,2.2386
+XGBRegressor,No,0.3463,2.2318

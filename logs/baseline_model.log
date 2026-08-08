@@ -1,0 +1,623 @@
+2026-08-06 21:07:52,964 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:07:52,965 - [ERROR] - ❌ Xatolik yuz berdi: [Errno 2] No such file or directory: '../data/web_scrapped_data/tmdb_movies.csv'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 39, in <module>
+    df = pd.read_csv("../data/web_scrapped_data/tmdb_movies.csv")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1904, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/common.py", line 930, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../data/web_scrapped_data/tmdb_movies.csv'
+2026-08-06 21:09:12,649 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:09:12,677 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:09:12,677 - [ERROR] - ❌ Xatolik yuz berdi: Cannot specify both 'axis' and 'index'/'columns'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 43, in <module>
+    X = df.drop(
+        ^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/frame.py", line 6302, in drop
+    return super().drop(
+           ^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 4619, in drop
+    raise ValueError("Cannot specify both 'axis' and 'index'/'columns'")
+ValueError: Cannot specify both 'axis' and 'index'/'columns'
+2026-08-06 21:11:14,769 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:11:14,796 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:11:14,798 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:11:14,801 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:11:14,802 - [ERROR] - ❌ Xatolik yuz berdi: '>' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 67, in <module>
+    if (numerical_cols) > 0:
+       ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/ops/common.py", line 85, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/arraylike.py", line 58, in __gt__
+    return self._cmp_method(other, operator.gt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 7406, in _cmp_method
+    result = ops.comparison_op(self._values, other, op)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/ops/array_ops.py", line 341, in comparison_op
+    res_values = op(lvalues, rvalues)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/ops/common.py", line 85, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/arraylike.py", line 58, in __gt__
+    return self._cmp_method(other, operator.gt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/arrays/string_.py", line 1240, in _cmp_method
+    result[valid] = op(self._ndarray[valid], other)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+2026-08-06 21:12:21,958 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:12:21,984 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:12:21,985 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:12:21,986 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:12:22,003 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:12:22,003 - [ERROR] - ❌ Xatolik yuz berdi: 'Encoder' object has no attribute 'encdola_train'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 80, in <module>
+    X_train_enc, label_cols, onehot_cols = train_encoder.encdola_train(onehot_threshold = 5)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Encoder' object has no attribute 'encdola_train'. Did you mean: 'encodla_train'?
+2026-08-06 21:13:18,349 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:13:18,375 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:13:18,375 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:13:18,377 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:13:18,393 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:13:18,393 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:13:18,394 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:13:18,394 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:13:18,394 - [ERROR] - ❌ Xatolik yuz berdi: Scaler.__init__() missing 1 required positional argument: 'df'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 87, in <module>
+    my_scaler = Scaler()
+                ^^^^^^^^
+TypeError: Scaler.__init__() missing 1 required positional argument: 'df'
+2026-08-06 21:13:22,576 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:13:22,601 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:13:22,601 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:13:22,602 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:13:22,615 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:13:22,616 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:13:22,616 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:13:22,616 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:13:22,616 - [ERROR] - ❌ Xatolik yuz berdi: Scaler.__init__() missing 1 required positional argument: 'df'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 87, in <module>
+    my_scaler = Scaler()
+                ^^^^^^^^
+TypeError: Scaler.__init__() missing 1 required positional argument: 'df'
+2026-08-06 21:15:25,037 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:15:25,067 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:15:25,069 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:15:25,071 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:15:25,088 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:15:25,088 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:15:25,089 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:15:25,089 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:15:25,089 - [ERROR] - ❌ Xatolik yuz berdi: 'Scaler' object has no attribute 'fit_transform'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 88, in <module>
+    X_train_scaled = my_scaler.fit_transform(X_train_enc)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Scaler' object has no attribute 'fit_transform'
+2026-08-06 21:25:29,221 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:25:29,250 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:25:29,252 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:25:29,254 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:25:29,271 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:25:29,272 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:25:29,272 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:25:29,272 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:25:29,273 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:25:29,274 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:25:29,274 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:25:29,275 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 134, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-06 21:27:03,105 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:27:03,131 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:27:03,131 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:27:03,132 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:27:03,148 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:27:03,148 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:27:03,148 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:27:03,148 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:27:03,149 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:27:03,150 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:27:03,150 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:27:03,151 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 134, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-06 21:33:42,645 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:33:42,674 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:33:42,675 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:33:42,677 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:33:42,694 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:33:42,695 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:33:42,695 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:33:42,695 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:33:42,696 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:33:42,696 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:33:42,697 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:33:42,697 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 134, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-06 21:37:06,132 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:37:06,162 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:37:06,164 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:37:06,166 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:37:06,183 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:37:06,184 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:37:06,184 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:37:06,184 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:37:06,185 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:37:06,185 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:37:06,185 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:37:06,186 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 134, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-06 21:39:59,806 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:39:59,835 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:39:59,837 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:39:59,839 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:39:59,856 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:39:59,856 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:39:59,857 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:39:59,857 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:39:59,858 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:39:59,858 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:39:59,858 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:39:59,869 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'In this climbing documentary we analyze the concepts of fear, death and life. Jordi Salas (Pelón) is a free solo climber. He performs alone without using any ropes, harnesses or other protective equipment, relying entirely on his ability instead. His mind controls everything. He continues to learn throughout his progression while getting up close with life, even though it may seem paradoxical.'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 139, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1344, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1369, in _check_y
+    y = y.astype(np.float64)
+        ^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'In this climbing documentary we analyze the concepts of fear, death and life. Jordi Salas (Pelón) is a free solo climber. He performs alone without using any ropes, harnesses or other protective equipment, relying entirely on his ability instead. His mind controls everything. He continues to learn throughout his progression while getting up close with life, even though it may seem paradoxical.'
+2026-08-06 21:42:46,592 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:42:46,620 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:42:46,623 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:42:46,624 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:42:46,641 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:42:46,642 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:42:46,642 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:42:46,642 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:42:46,643 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:42:46,644 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:42:46,644 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:42:46,644 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 135, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-06 21:44:07,591 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:44:07,618 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:44:07,619 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:44:07,620 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:44:07,638 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:44:07,638 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:44:07,639 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:44:07,639 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:44:07,640 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:44:07,640 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:44:07,640 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:44:07,641 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 139, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-06 21:44:30,603 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:44:30,632 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:44:30,635 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:44:30,637 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:44:30,653 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:44:30,653 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:44:30,654 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:44:30,654 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:44:30,655 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:44:30,655 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:44:30,655 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:44:30,661 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'In this climbing documentary we analyze the concepts of fear, death and life. Jordi Salas (Pelón) is a free solo climber. He performs alone without using any ropes, harnesses or other protective equipment, relying entirely on his ability instead. His mind controls everything. He continues to learn throughout his progression while getting up close with life, even though it may seem paradoxical.'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 144, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1344, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1369, in _check_y
+    y = y.astype(np.float64)
+        ^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'In this climbing documentary we analyze the concepts of fear, death and life. Jordi Salas (Pelón) is a free solo climber. He performs alone without using any ropes, harnesses or other protective equipment, relying entirely on his ability instead. His mind controls everything. He continues to learn throughout his progression while getting up close with life, even though it may seem paradoxical.'
+2026-08-06 21:45:48,521 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:45:48,549 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:45:48,553 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:45:48,554 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:45:48,570 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:45:48,570 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:45:48,570 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:45:48,570 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:45:48,571 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:45:48,572 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:45:48,572 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:45:48,578 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'In this climbing documentary we analyze the concepts of fear, death and life. Jordi Salas (Pelón) is a free solo climber. He performs alone without using any ropes, harnesses or other protective equipment, relying entirely on his ability instead. His mind controls everything. He continues to learn throughout his progression while getting up close with life, even though it may seem paradoxical.'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 149, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1344, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1369, in _check_y
+    y = y.astype(np.float64)
+        ^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'In this climbing documentary we analyze the concepts of fear, death and life. Jordi Salas (Pelón) is a free solo climber. He performs alone without using any ropes, harnesses or other protective equipment, relying entirely on his ability instead. His mind controls everything. He continues to learn throughout his progression while getting up close with life, even though it may seem paradoxical.'
+2026-08-06 21:48:54,379 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:48:54,406 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:48:54,410 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:48:54,411 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:48:54,426 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:48:54,427 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:48:54,427 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:48:54,427 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:48:54,428 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:48:54,428 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:48:54,428 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:48:54,435 - [ERROR] - ❌ Xatolik yuz berdi: could not convert string to float: 'In this climbing documentary we analyze the concepts of fear, death and life. Jordi Salas (Pelón) is a free solo climber. He performs alone without using any ropes, harnesses or other protective equipment, relying entirely on his ability instead. His mind controls everything. He continues to learn throughout his progression while getting up close with life, even though it may seem paradoxical.'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 151, in <module>
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1344, in check_X_y
+    y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1369, in _check_y
+    y = y.astype(np.float64)
+        ^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'In this climbing documentary we analyze the concepts of fear, death and life. Jordi Salas (Pelón) is a free solo climber. He performs alone without using any ropes, harnesses or other protective equipment, relying entirely on his ability instead. His mind controls everything. He continues to learn throughout his progression while getting up close with life, even though it may seem paradoxical.'
+2026-08-06 21:49:40,789 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:49:40,816 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:49:40,820 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:49:40,821 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:49:40,835 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:49:40,836 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:49:40,836 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:49:40,836 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:49:40,837 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:49:40,837 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:49:40,837 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:49:40,852 - [ERROR] - ❌ Xatolik yuz berdi: Found input variables with inconsistent numbers of samples: [1796, 7180]
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 157, in <module>
+    r2 = r2_score(y_test, preds)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_param_validation.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/metrics/_regression.py", line 1288, in r2_score
+    _check_reg_targets_with_floating_dtype(
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/metrics/_regression.py", line 209, in _check_reg_targets_with_floating_dtype
+    y_type, y_true, y_pred, sample_weight, multioutput = _check_reg_targets(
+                                                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/metrics/_regression.py", line 114, in _check_reg_targets
+    check_consistent_length(y_true, y_pred, sample_weight)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 458, in check_consistent_length
+    raise ValueError(
+ValueError: Found input variables with inconsistent numbers of samples: [1796, 7180]
+2026-08-06 21:50:59,855 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:50:59,880 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:50:59,883 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:50:59,884 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:50:59,900 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:50:59,900 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:50:59,900 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:50:59,900 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:50:59,901 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:50:59,902 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:50:59,902 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:50:59,909 - [INFO] -    -> LinearRegression tugatildi (R2: 0.1731, RMSE: 2.5101)
+2026-08-06 21:50:59,910 - [ERROR] - ❌ Xatolik yuz berdi: Cannot save file into a non-existent directory: '../results/tables'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/baseline.py", line 178, in <module>
+    results_df.to_csv(output_path, index=False) # index = False orqali default index tiymatlarni bermsadan table chiroyli chiqishini taminlaymiz.
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 3976, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/formats/format.py", line 1025, in to_csv
+    csv_formatter.save()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/formats/csvs.py", line 251, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/common.py", line 797, in get_handle
+    check_parent_directory(str(handle))
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/io/common.py", line 656, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '../results/tables'
+2026-08-06 21:51:52,499 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:51:52,529 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:51:52,535 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:51:52,536 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:51:52,551 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:51:52,551 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:51:52,552 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:51:52,552 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:51:52,553 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:51:52,553 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:51:52,553 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:51:52,560 - [INFO] -    -> LinearRegression tugatildi (R2: 0.1731, RMSE: 2.5101)
+2026-08-06 21:51:52,562 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: ../results/tables/baseline_model_results.csv
+2026-08-06 21:51:52,571 - [INFO] -    -> DecisionTree tugatildi (R2: 0.2705, RMSE: 2.3576)
+2026-08-06 21:51:52,572 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: ../results/tables/baseline_model_results.csv
+2026-08-06 21:51:52,995 - [INFO] -    -> RandomForest tugatildi (R2: 0.3423, RMSE: 2.2386)
+2026-08-06 21:51:52,996 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: ../results/tables/baseline_model_results.csv
+2026-08-06 21:51:53,208 - [INFO] -    -> XGBRegressor tugatildi (R2: 0.3463, RMSE: 2.2318)
+2026-08-06 21:51:53,209 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: ../results/tables/baseline_model_results.csv
+2026-08-06 21:54:36,697 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 21:54:36,726 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 21:54:36,731 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 21:54:36,733 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 21:54:36,747 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 21:54:36,748 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 21:54:36,748 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 21:54:36,748 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 21:54:36,749 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:54:36,750 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 21:54:36,750 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 21:54:36,758 - [INFO] -    -> LinearRegression tugatildi (R2: 0.1731, RMSE: 2.5101)
+2026-08-06 21:54:36,766 - [INFO] -    -> DecisionTree tugatildi (R2: 0.2705, RMSE: 2.3576)
+2026-08-06 21:54:37,184 - [INFO] -    -> RandomForest tugatildi (R2: 0.3423, RMSE: 2.2386)
+2026-08-06 21:54:37,393 - [INFO] -    -> XGBRegressor tugatildi (R2: 0.3463, RMSE: 2.2318)
+2026-08-06 21:54:37,394 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: ../results/tables/baseline_model_results.csv
+2026-08-06 22:03:00,576 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 22:03:00,605 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 22:03:00,610 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 22:03:00,612 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 22:03:00,627 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 22:03:00,628 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 22:03:00,628 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 22:03:00,628 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 22:03:00,629 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 22:03:00,629 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 22:03:00,629 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 22:03:00,637 - [INFO] -    -> LinearRegression tugatildi (R2: 0.1731, RMSE: 2.5101)
+2026-08-06 22:03:00,645 - [INFO] -    -> DecisionTree tugatildi (R2: 0.2705, RMSE: 2.3576)
+2026-08-06 22:03:01,067 - [INFO] -    -> RandomForest tugatildi (R2: 0.3423, RMSE: 2.2386)
+2026-08-06 22:03:01,278 - [INFO] -    -> XGBRegressor tugatildi (R2: 0.3463, RMSE: 2.2318)
+2026-08-06 22:03:01,279 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: /Users/murodjongafforov/Desktop/mp_last_project/results/tables/baseline_model_results.csv
+2026-08-06 22:04:51,108 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-06 22:04:51,136 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-06 22:04:51,141 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-06 22:04:51,142 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-06 22:04:51,158 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-06 22:04:51,159 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-06 22:04:51,159 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-06 22:04:51,159 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-06 22:04:51,160 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 22:04:51,160 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-06 22:04:51,161 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-06 22:04:51,169 - [INFO] -    -> LinearRegression tugatildi (R2: 0.1731, RMSE: 2.5101)
+2026-08-06 22:04:51,178 - [INFO] -    -> DecisionTree tugatildi (R2: 0.2705, RMSE: 2.3576)
+2026-08-06 22:04:51,598 - [INFO] -    -> RandomForest tugatildi (R2: 0.3423, RMSE: 2.2386)
+2026-08-06 22:04:51,811 - [INFO] -    -> XGBRegressor tugatildi (R2: 0.3463, RMSE: 2.2318)
+2026-08-06 22:04:51,812 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: /Users/murodjongafforov/Desktop/mp_last_project/results/tables/baseline_model_results.csv
+2026-08-08 15:52:34,935 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-08 15:52:34,965 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-08 15:52:34,968 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-08 15:52:34,969 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-08 15:52:34,985 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-08 15:52:34,985 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 15:52:34,986 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 15:52:34,986 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-08 15:52:34,987 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 15:52:34,988 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 15:52:34,988 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-08 15:52:35,002 - [INFO] -    -> LinearRegression tugatildi (R2: 0.1731, RMSE: 2.5101)
+2026-08-08 15:52:35,010 - [INFO] -    -> DecisionTree tugatildi (R2: 0.2705, RMSE: 2.3576)
+2026-08-08 15:52:35,453 - [INFO] -    -> RandomForest tugatildi (R2: 0.3423, RMSE: 2.2386)
+2026-08-08 15:52:35,663 - [INFO] -    -> XGBRegressor tugatildi (R2: 0.3463, RMSE: 2.2318)
+2026-08-08 15:52:35,665 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: /Users/murodjongafforov/Desktop/mp_last_project/results/tables/baseline_model_results.csv
+2026-08-08 15:54:58,132 - [INFO] - 🚀 Baseline skripti ishga tushdi...
+2026-08-08 15:54:58,161 - [INFO] - 📂 Ma'lumot yuklanmoqda: data/web_scrapped_data/tmdb_movies.csv
+2026-08-08 15:54:58,166 - [INFO] - ✂️ Ma'lumot Train (80%) va Test (20%) qismlarga bo'linmoqda...
+2026-08-08 15:54:58,167 - [INFO] - 🧹 Bo'sh joylar (Missing values) to'ldirilmoqda...
+2026-08-08 15:54:58,181 - [INFO] - 🔢 Categorical ustunlar encoded qilinmoqda...
+2026-08-08 15:54:58,182 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 15:54:58,182 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 15:54:58,182 - [INFO] - ⚖️ Scaling jarayoni bajarilmoqda...
+2026-08-08 15:54:58,183 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 15:54:58,184 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 15:54:58,184 - [INFO] - 🤖 Modellar o'qitilib, bashorat qilinmoqda...
+2026-08-08 15:54:58,190 - [INFO] -    -> LinearRegression tugatildi (R2: 0.1731, RMSE: 2.5101)
+2026-08-08 15:54:58,198 - [INFO] -    -> DecisionTree tugatildi (R2: 0.2705, RMSE: 2.3576)
+2026-08-08 15:54:58,624 - [INFO] -    -> RandomForest tugatildi (R2: 0.3423, RMSE: 2.2386)
+2026-08-08 15:54:58,838 - [INFO] -    -> XGBRegressor tugatildi (R2: 0.3463, RMSE: 2.2318)
+2026-08-08 15:54:58,839 - [INFO] - 💾 Natijalar muvaffaqiyatli saqlandi: /Users/murodjongafforov/Desktop/mp_last_project/results/tables/baseline_model_results.csv

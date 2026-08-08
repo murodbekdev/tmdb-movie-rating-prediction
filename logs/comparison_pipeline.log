@@ -1,0 +1,1549 @@
+2026-08-08 16:20:19,930 - [INFO] - 🚀 Asosiy ML Pipeline ishga tushdi...
+2026-08-08 16:20:19,930 - [INFO] - 📂 Tayyor dataset yuklanmoqda: /Users/murodjongafforov/Desktop/mp_last_project/data/feature_engineered/fe_dataset.csv
+2026-08-08 16:20:19,951 - [INFO] - ✅ Dataset yuklandi. Hajmi: (8977, 15)
+2026-08-08 16:20:19,953 - [INFO] - 🎯 Target: user_score
+2026-08-08 16:20:19,953 - [INFO] - 📊 X shape: (8977, 14)
+2026-08-08 16:20:19,953 - [INFO] - 🎯 y shape: (8977,)
+2026-08-08 16:20:19,953 - [INFO] - ✂️ Ma'lumotlar Train va Testga bo'linmoqda (80/20)...
+2026-08-08 16:20:19,954 - [INFO] - X_train: (7181, 14)
+2026-08-08 16:20:19,954 - [INFO] - X_test: (1796, 14)
+2026-08-08 16:20:19,954 - [INFO] - 📊 Skewness tekshirilmoqda...
+2026-08-08 16:20:19,957 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:20:19,957 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:20:19,958 - [INFO] - ✅ Skewness preprocessing tugadi.
+2026-08-08 16:20:19,958 - [INFO] - 
+==========================================
+2026-08-08 16:20:19,958 - [INFO] - 🩹 Imputation usuli boshlandi: MEAN
+2026-08-08 16:20:19,958 - [INFO] - ==========================================
+2026-08-08 16:20:19,958 - [INFO] - mean imputer saralandi
+2026-08-08 16:20:19,958 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:20:19,958 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:20:19,958 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:20:19,973 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:20:19,974 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:20:19,974 - [INFO] - ✅ mean imputation tugadi.
+2026-08-08 16:20:19,975 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 16:20:19,975 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 16:20:19,975 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 14), Test shape: (1796, 14)
+2026-08-08 16:20:19,976 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:20:19,977 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:20:19,977 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:20:19,977 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:20:19,977 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:20:19,977 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:20:19,977 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mean | Scaling: Yes
+2026-08-08 16:20:19,978 - [ERROR] - ❌ mean imputation usulida xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 220, in main
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-08 16:20:19,983 - [INFO] - 
+==========================================
+2026-08-08 16:20:19,983 - [INFO] - 🩹 Imputation usuli boshlandi: MEDIAN
+2026-08-08 16:20:19,983 - [INFO] - ==========================================
+2026-08-08 16:20:19,983 - [INFO] - median imputer saralandi
+2026-08-08 16:20:19,983 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:20:19,983 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:20:19,983 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:20:19,991 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:20:19,993 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:20:19,993 - [INFO] - ✅ median imputation tugadi.
+2026-08-08 16:20:19,994 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 16:20:19,994 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 16:20:19,994 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 14), Test shape: (1796, 14)
+2026-08-08 16:20:19,995 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:20:19,996 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:20:19,996 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:20:19,996 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:20:19,996 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:20:19,996 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:20:19,996 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: median | Scaling: Yes
+2026-08-08 16:20:19,997 - [ERROR] - ❌ median imputation usulida xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 220, in main
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-08 16:20:19,998 - [INFO] - 
+==========================================
+2026-08-08 16:20:19,998 - [INFO] - 🩹 Imputation usuli boshlandi: MICE
+2026-08-08 16:20:19,998 - [INFO] - ==========================================
+2026-08-08 16:20:19,998 - [INFO] - mice imputer saralandi
+2026-08-08 16:20:19,998 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:20:19,998 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:20:19,998 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:20:20,074 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:20:20,079 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:20:20,079 - [INFO] - ✅ mice imputation tugadi.
+2026-08-08 16:20:20,079 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 16:20:20,079 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 16:20:20,080 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 14), Test shape: (1796, 14)
+2026-08-08 16:20:20,080 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:20:20,081 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:20:20,081 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:20:20,081 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:20:20,081 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:20:20,081 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:20:20,081 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mice | Scaling: Yes
+2026-08-08 16:20:20,082 - [ERROR] - ❌ mice imputation usulida xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 220, in main
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-08 16:20:20,083 - [INFO] - 
+==========================================
+2026-08-08 16:20:20,083 - [INFO] - 🩹 Imputation usuli boshlandi: KNN
+2026-08-08 16:20:20,083 - [INFO] - ==========================================
+2026-08-08 16:20:20,083 - [INFO] - knn imputer saralandi
+2026-08-08 16:20:20,083 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:20:20,083 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:20:20,083 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:20:20,766 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:20:20,909 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:20:20,909 - [INFO] - ✅ knn imputation tugadi.
+2026-08-08 16:20:20,910 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 16:20:20,910 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 16:20:20,910 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 14), Test shape: (1796, 14)
+2026-08-08 16:20:20,911 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:20:20,912 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:20:20,912 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:20:20,912 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:20:20,912 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:20:20,912 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:20:20,912 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: knn | Scaling: Yes
+2026-08-08 16:20:20,913 - [ERROR] - ❌ knn imputation usulida xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 220, in main
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-08 16:20:20,914 - [ERROR] - ❌ Hech qanday model natijasi olinmadi.
+2026-08-08 16:29:26,694 - [INFO] - 🚀 Asosiy ML Pipeline ishga tushdi...
+2026-08-08 16:29:26,694 - [INFO] - 📂 Tayyor dataset yuklanmoqda: /Users/murodjongafforov/Desktop/mp_last_project/data/feature_engineered/fe_dataset.csv
+2026-08-08 16:29:26,717 - [INFO] - ✅ Dataset yuklandi. Hajmi: (8977, 15)
+2026-08-08 16:29:26,719 - [INFO] - 🎯 Target: user_score
+2026-08-08 16:29:26,719 - [INFO] - 📊 X shape: (8977, 14)
+2026-08-08 16:29:26,719 - [INFO] - 🎯 y shape: (8977,)
+2026-08-08 16:29:26,719 - [INFO] - ✂️ Ma'lumotlar Train va Testga bo'linmoqda (80/20)...
+2026-08-08 16:29:26,721 - [INFO] - X_train: (7181, 14)
+2026-08-08 16:29:26,721 - [INFO] - X_test: (1796, 14)
+2026-08-08 16:29:26,721 - [INFO] - 📊 Skewness tekshirilmoqda...
+2026-08-08 16:29:26,723 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:29:26,724 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:29:26,724 - [INFO] - ✅ Skewness preprocessing tugadi.
+2026-08-08 16:29:26,724 - [INFO] - 
+==========================================
+2026-08-08 16:29:26,724 - [INFO] - 🩹 Imputation usuli boshlandi: MEAN
+2026-08-08 16:29:26,724 - [INFO] - ==========================================
+2026-08-08 16:29:26,724 - [INFO] - mean imputer saralandi
+2026-08-08 16:29:26,724 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:29:26,724 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:29:26,724 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:29:26,739 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:29:26,741 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:29:26,741 - [INFO] - ✅ mean imputation tugadi.
+2026-08-08 16:29:26,741 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 16:29:26,742 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 16:29:26,742 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 14), Test shape: (1796, 14)
+2026-08-08 16:29:26,743 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:29:26,743 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:29:26,743 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:29:26,743 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:29:26,743 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:29:26,743 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:29:26,743 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mean | Scaling: Yes
+2026-08-08 16:29:26,744 - [ERROR] - ❌ mean imputation usulida xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 220, in main
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-08 16:29:26,749 - [INFO] - 
+==========================================
+2026-08-08 16:29:26,749 - [INFO] - 🩹 Imputation usuli boshlandi: MEDIAN
+2026-08-08 16:29:26,749 - [INFO] - ==========================================
+2026-08-08 16:29:26,749 - [INFO] - median imputer saralandi
+2026-08-08 16:29:26,749 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:29:26,750 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:29:26,750 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:29:26,758 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:29:26,760 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:29:26,760 - [INFO] - ✅ median imputation tugadi.
+2026-08-08 16:29:26,761 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 16:29:26,761 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 16:29:26,761 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 14), Test shape: (1796, 14)
+2026-08-08 16:29:26,762 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:29:26,762 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:29:26,762 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:29:26,763 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:29:26,763 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:29:26,763 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:29:26,763 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: median | Scaling: Yes
+2026-08-08 16:29:26,764 - [ERROR] - ❌ median imputation usulida xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 220, in main
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-08 16:29:26,764 - [INFO] - 
+==========================================
+2026-08-08 16:29:26,764 - [INFO] - 🩹 Imputation usuli boshlandi: MICE
+2026-08-08 16:29:26,764 - [INFO] - ==========================================
+2026-08-08 16:29:26,764 - [INFO] - mice imputer saralandi
+2026-08-08 16:29:26,764 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:29:26,765 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:29:26,765 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:29:26,844 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:29:26,848 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:29:26,848 - [INFO] - ✅ mice imputation tugadi.
+2026-08-08 16:29:26,849 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 16:29:26,849 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 16:29:26,849 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 14), Test shape: (1796, 14)
+2026-08-08 16:29:26,851 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:29:26,851 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:29:26,851 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:29:26,851 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:29:26,851 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:29:26,851 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:29:26,852 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mice | Scaling: Yes
+2026-08-08 16:29:26,853 - [ERROR] - ❌ mice imputation usulida xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 220, in main
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-08 16:29:26,853 - [INFO] - 
+==========================================
+2026-08-08 16:29:26,853 - [INFO] - 🩹 Imputation usuli boshlandi: KNN
+2026-08-08 16:29:26,853 - [INFO] - ==========================================
+2026-08-08 16:29:26,853 - [INFO] - knn imputer saralandi
+2026-08-08 16:29:26,853 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:29:26,854 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:29:26,854 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:29:27,551 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:29:27,695 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:29:27,695 - [INFO] - ✅ knn imputation tugadi.
+2026-08-08 16:29:27,696 - [INFO] - Train uchun muvaffaqiyatli Encoding amalga oshirildi.
+2026-08-08 16:29:27,696 - [INFO] - Test uchun Encoding muvaffaqiyatli amalga qilindi.
+2026-08-08 16:29:27,696 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 14), Test shape: (1796, 14)
+2026-08-08 16:29:27,697 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:29:27,698 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:29:27,698 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:29:27,698 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:29:27,698 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:29:27,698 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:29:27,698 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: knn | Scaling: Yes
+2026-08-08 16:29:27,699 - [ERROR] - ❌ knn imputation usulida xatolik yuz berdi: could not convert string to float: 'ES'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 220, in main
+    model.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/linear_model/_base.py", line 681, in fit
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 3055, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1327, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1035, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/_array_api.py", line 976, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/pandas/core/generic.py", line 2027, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'ES'
+2026-08-08 16:29:27,700 - [ERROR] - ❌ Hech qanday model natijasi olinmadi.
+2026-08-08 16:34:59,007 - [INFO] - 🚀 Asosiy ML Pipeline ishga tushdi...
+2026-08-08 16:34:59,007 - [INFO] - 📂 Tayyor dataset yuklanmoqda: /Users/murodjongafforov/Desktop/mp_last_project/data/feature_engineered/fe_dataset.csv
+2026-08-08 16:34:59,028 - [INFO] - ✅ Dataset yuklandi. Hajmi: (8977, 15)
+2026-08-08 16:34:59,028 - [INFO] - 🎯 Target: user_score
+2026-08-08 16:34:59,028 - [INFO] - 📊 X shape: (8977, 14)
+2026-08-08 16:34:59,028 - [INFO] - 🎯 y shape: (8977,)
+2026-08-08 16:34:59,028 - [INFO] - ✂️ Ma'lumotlar Train va Testga bo'linmoqda (80/20)...
+2026-08-08 16:34:59,030 - [INFO] - X_train: (7181, 14)
+2026-08-08 16:34:59,030 - [INFO] - X_test: (1796, 14)
+2026-08-08 16:34:59,030 - [INFO] - 📊 Skewness tekshirilmoqda...
+2026-08-08 16:34:59,031 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:34:59,032 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:34:59,032 - [INFO] - ✅ Skewness preprocessing tugadi.
+2026-08-08 16:34:59,032 - [INFO] - 
+==========================================
+2026-08-08 16:34:59,032 - [INFO] - 🩹 Imputation usuli boshlandi: MEAN
+2026-08-08 16:34:59,032 - [INFO] - ==========================================
+2026-08-08 16:34:59,032 - [INFO] - mean imputer saralandi
+2026-08-08 16:34:59,032 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:34:59,032 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:34:59,032 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:34:59,046 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:34:59,048 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:34:59,048 - [INFO] - ✅ mean imputation tugadi.
+2026-08-08 16:34:59,048 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:34:59,056 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:34:59,057 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:34:59,065 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:34:59,069 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:34:59,074 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:34:59,074 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:34:59,075 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:34:59,076 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:34:59,076 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:35:02,133 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:35:02,133 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:35:02,133 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:35:02,135 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:35:02,136 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:35:02,136 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:35:02,136 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:35:02,136 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:35:02,136 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:35:02,136 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mean | Scaling: Yes
+2026-08-08 16:35:02,138 - [INFO] -     → LinearRegresion (mean) | R2: 0.2826 | RMSE: 2.3452
+2026-08-08 16:35:02,138 - [INFO] - ⏳ Tuning: Ridge | Imputer: mean | Scaling: Yes
+2026-08-08 16:35:03,289 - [ERROR] - ❌ mean imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:35:03,291 - [INFO] - 
+==========================================
+2026-08-08 16:35:03,291 - [INFO] - 🩹 Imputation usuli boshlandi: MEDIAN
+2026-08-08 16:35:03,291 - [INFO] - ==========================================
+2026-08-08 16:35:03,291 - [INFO] - median imputer saralandi
+2026-08-08 16:35:03,291 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:35:03,293 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:35:03,293 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:35:03,302 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:35:03,304 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:35:03,304 - [INFO] - ✅ median imputation tugadi.
+2026-08-08 16:35:03,304 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:35:03,305 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:35:03,307 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:35:03,314 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:35:03,318 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:35:03,323 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:35:03,323 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:35:03,324 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:35:03,325 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:35:03,325 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:35:06,404 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:35:06,404 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:35:06,404 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:35:06,406 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:35:06,407 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:35:06,407 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:35:06,407 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:35:06,407 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:35:06,407 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:35:06,407 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: median | Scaling: Yes
+2026-08-08 16:35:06,409 - [INFO] -     → LinearRegresion (median) | R2: 0.1061 | RMSE: 2.6179
+2026-08-08 16:35:06,409 - [INFO] - ⏳ Tuning: Ridge | Imputer: median | Scaling: Yes
+2026-08-08 16:35:07,494 - [ERROR] - ❌ median imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:35:07,495 - [INFO] - 
+==========================================
+2026-08-08 16:35:07,495 - [INFO] - 🩹 Imputation usuli boshlandi: MICE
+2026-08-08 16:35:07,495 - [INFO] - ==========================================
+2026-08-08 16:35:07,495 - [INFO] - mice imputer saralandi
+2026-08-08 16:35:07,495 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:35:07,496 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:35:07,496 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:35:07,564 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:35:07,568 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:35:07,568 - [INFO] - ✅ mice imputation tugadi.
+2026-08-08 16:35:07,569 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:35:07,570 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:35:07,571 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:35:07,579 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:35:07,583 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:35:07,587 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:35:07,588 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:35:07,588 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:35:07,589 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:35:07,590 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:35:10,825 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:35:10,825 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:35:10,825 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:35:10,827 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:35:10,827 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:35:10,827 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:35:10,827 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:35:10,828 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:35:10,828 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:35:10,828 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mice | Scaling: Yes
+2026-08-08 16:35:10,830 - [INFO] -     → LinearRegresion (mice) | R2: -2.6075 | RMSE: 5.2591
+2026-08-08 16:35:10,830 - [INFO] - ⏳ Tuning: Ridge | Imputer: mice | Scaling: Yes
+2026-08-08 16:35:11,864 - [ERROR] - ❌ mice imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:35:11,865 - [INFO] - 
+==========================================
+2026-08-08 16:35:11,865 - [INFO] - 🩹 Imputation usuli boshlandi: KNN
+2026-08-08 16:35:11,865 - [INFO] - ==========================================
+2026-08-08 16:35:11,865 - [INFO] - knn imputer saralandi
+2026-08-08 16:35:11,865 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:35:11,866 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:35:11,866 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:35:12,466 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:35:12,601 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:35:12,601 - [INFO] - ✅ knn imputation tugadi.
+2026-08-08 16:35:12,602 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:35:12,602 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:35:12,604 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:35:12,611 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:35:12,615 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:35:12,620 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:35:12,620 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:35:12,621 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:35:12,622 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:35:12,622 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:35:15,921 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:35:15,921 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:35:15,921 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:35:15,923 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:35:15,923 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:35:15,923 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:35:15,923 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:35:15,923 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:35:15,923 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:35:15,924 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: knn | Scaling: Yes
+2026-08-08 16:35:15,926 - [INFO] -     → LinearRegresion (knn) | R2: -6.7359 | RMSE: 7.7013
+2026-08-08 16:35:15,926 - [INFO] - ⏳ Tuning: Ridge | Imputer: knn | Scaling: Yes
+2026-08-08 16:35:17,040 - [ERROR] - ❌ knn imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:35:17,043 - [INFO] - 💾 Barcha natijalar saqlandi: /Users/murodjongafforov/Desktop/mp_last_project/results/tables/all_imputation_model_results.csv
+2026-08-08 16:35:17,043 - [INFO] - 🏆 ENG YAXSHI MODEL SAQLANDI: /Users/murodjongafforov/Desktop/mp_last_project/models/best_improved_model.pkl
+2026-08-08 16:35:17,043 - [INFO] -     -Imputation: mean
+2026-08-08 16:35:17,043 - [INFO] -     - Model: LinearRegresion
+2026-08-08 16:35:17,043 - [INFO] - ❌ Pipeline ichida global xatolik yuz berdi: 'R2'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 296, in main
+    logger.info(f"    - R2 Score: {best_model_info["R2"]:.4f}")
+                                   ~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'R2'
+2026-08-08 16:39:45,365 - [INFO] - 🚀 Asosiy ML Pipeline ishga tushdi...
+2026-08-08 16:39:45,366 - [INFO] - 📂 Tayyor dataset yuklanmoqda: /Users/murodjongafforov/Desktop/mp_last_project/data/feature_engineered/fe_dataset.csv
+2026-08-08 16:39:45,386 - [INFO] - ✅ Dataset yuklandi. Hajmi: (8977, 15)
+2026-08-08 16:39:45,386 - [INFO] - 🎯 Target: user_score
+2026-08-08 16:39:45,386 - [INFO] - 📊 X shape: (8977, 14)
+2026-08-08 16:39:45,386 - [INFO] - 🎯 y shape: (8977,)
+2026-08-08 16:39:45,386 - [INFO] - ✂️ Ma'lumotlar Train va Testga bo'linmoqda (80/20)...
+2026-08-08 16:39:45,388 - [INFO] - X_train: (7181, 14)
+2026-08-08 16:39:45,388 - [INFO] - X_test: (1796, 14)
+2026-08-08 16:39:45,388 - [INFO] - 📊 Skewness tekshirilmoqda...
+2026-08-08 16:39:45,389 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:39:45,390 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:39:45,390 - [INFO] - ✅ Skewness preprocessing tugadi.
+2026-08-08 16:39:45,390 - [INFO] - 
+==========================================
+2026-08-08 16:39:45,390 - [INFO] - 🩹 Imputation usuli boshlandi: MEAN
+2026-08-08 16:39:45,390 - [INFO] - ==========================================
+2026-08-08 16:39:45,390 - [INFO] - mean imputer saralandi
+2026-08-08 16:39:45,390 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:39:45,391 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:39:45,391 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:39:45,405 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:39:45,407 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:39:45,407 - [INFO] - ✅ mean imputation tugadi.
+2026-08-08 16:39:45,407 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:39:45,412 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:39:45,414 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:39:45,422 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:39:45,426 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:39:45,430 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:39:45,430 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:39:45,431 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:39:45,432 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:39:45,432 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:39:48,533 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:39:48,534 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:39:48,534 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:39:48,535 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:39:48,536 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:39:48,536 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:39:48,536 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:39:48,536 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:39:48,536 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:39:48,536 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mean | Scaling: Yes
+2026-08-08 16:39:48,538 - [INFO] -     → LinearRegresion (mean) | R2: 0.2826 | RMSE: 2.3452
+2026-08-08 16:39:48,538 - [INFO] - ⏳ Tuning: Ridge | Imputer: mean | Scaling: Yes
+2026-08-08 16:39:49,705 - [ERROR] - ❌ mean imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:39:49,707 - [INFO] - 
+==========================================
+2026-08-08 16:39:49,707 - [INFO] - 🩹 Imputation usuli boshlandi: MEDIAN
+2026-08-08 16:39:49,707 - [INFO] - ==========================================
+2026-08-08 16:39:49,707 - [INFO] - median imputer saralandi
+2026-08-08 16:39:49,707 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:39:49,708 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:39:49,708 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:39:49,717 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:39:49,719 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:39:49,719 - [INFO] - ✅ median imputation tugadi.
+2026-08-08 16:39:49,720 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:39:49,721 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:39:49,723 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:39:49,731 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:39:49,734 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:39:49,739 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:39:49,739 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:39:49,740 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:39:49,741 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:39:49,741 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:39:52,850 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:39:52,850 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:39:52,850 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:39:52,852 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:39:52,853 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:39:52,853 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:39:52,853 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:39:52,853 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:39:52,853 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:39:52,853 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: median | Scaling: Yes
+2026-08-08 16:39:52,855 - [INFO] -     → LinearRegresion (median) | R2: 0.1061 | RMSE: 2.6179
+2026-08-08 16:39:52,855 - [INFO] - ⏳ Tuning: Ridge | Imputer: median | Scaling: Yes
+2026-08-08 16:39:53,976 - [ERROR] - ❌ median imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:39:53,977 - [INFO] - 
+==========================================
+2026-08-08 16:39:53,977 - [INFO] - 🩹 Imputation usuli boshlandi: MICE
+2026-08-08 16:39:53,977 - [INFO] - ==========================================
+2026-08-08 16:39:53,977 - [INFO] - mice imputer saralandi
+2026-08-08 16:39:53,977 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:39:53,978 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:39:53,978 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:39:54,050 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:39:54,054 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:39:54,054 - [INFO] - ✅ mice imputation tugadi.
+2026-08-08 16:39:54,055 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:39:54,056 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:39:54,057 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:39:54,066 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:39:54,070 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:39:54,074 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:39:54,075 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:39:54,075 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:39:54,076 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:39:54,076 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:39:57,319 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:39:57,319 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:39:57,319 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:39:57,321 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:39:57,321 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:39:57,321 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:39:57,321 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:39:57,322 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:39:57,322 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:39:57,322 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mice | Scaling: Yes
+2026-08-08 16:39:57,324 - [INFO] -     → LinearRegresion (mice) | R2: -2.6075 | RMSE: 5.2591
+2026-08-08 16:39:57,324 - [INFO] - ⏳ Tuning: Ridge | Imputer: mice | Scaling: Yes
+2026-08-08 16:39:58,426 - [ERROR] - ❌ mice imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:39:58,427 - [INFO] - 
+==========================================
+2026-08-08 16:39:58,427 - [INFO] - 🩹 Imputation usuli boshlandi: KNN
+2026-08-08 16:39:58,427 - [INFO] - ==========================================
+2026-08-08 16:39:58,427 - [INFO] - knn imputer saralandi
+2026-08-08 16:39:58,427 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:39:58,428 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:39:58,428 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:39:59,036 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:39:59,168 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:39:59,168 - [INFO] - ✅ knn imputation tugadi.
+2026-08-08 16:39:59,168 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:39:59,169 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:39:59,171 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:39:59,178 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:39:59,182 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:39:59,186 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:39:59,187 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:39:59,187 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:39:59,188 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:39:59,188 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:40:02,411 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:40:02,411 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:40:02,411 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:40:02,412 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:40:02,413 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:40:02,413 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:40:02,413 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:40:02,413 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:40:02,413 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:40:02,413 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: knn | Scaling: Yes
+2026-08-08 16:40:02,415 - [INFO] -     → LinearRegresion (knn) | R2: -6.7359 | RMSE: 7.7013
+2026-08-08 16:40:02,415 - [INFO] - ⏳ Tuning: Ridge | Imputer: knn | Scaling: Yes
+2026-08-08 16:40:03,485 - [ERROR] - ❌ knn imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:40:03,488 - [INFO] - 💾 Barcha natijalar saqlandi: /Users/murodjongafforov/Desktop/mp_last_project/results/tables/all_imputation_model_results.csv
+2026-08-08 16:40:03,488 - [INFO] - 🏆 ENG YAXSHI MODEL SAQLANDI: /Users/murodjongafforov/Desktop/mp_last_project/models/best_improved_model.pkl
+2026-08-08 16:40:03,488 - [INFO] -     -Imputation: mean
+2026-08-08 16:40:03,488 - [INFO] -     - Model: LinearRegresion
+2026-08-08 16:40:03,488 - [INFO] -     - R2 Score: 0.2826
+2026-08-08 16:40:03,489 - [INFO] - ❌ Pipeline ichida global xatolik yuz berdi: 'R2'
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 304, in main
+    print(f"🏆 ENG YAXSHI MODEL: {best_model_info['Model']} (Imputation: {best_model_info['Imputation']}, R2: {best_model_info['R2']:.4f})")
+                                                                                                               ~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'R2'
+2026-08-08 16:41:03,304 - [INFO] - 🚀 Asosiy ML Pipeline ishga tushdi...
+2026-08-08 16:41:03,304 - [INFO] - 📂 Tayyor dataset yuklanmoqda: /Users/murodjongafforov/Desktop/mp_last_project/data/feature_engineered/fe_dataset.csv
+2026-08-08 16:41:03,324 - [INFO] - ✅ Dataset yuklandi. Hajmi: (8977, 15)
+2026-08-08 16:41:03,324 - [INFO] - 🎯 Target: user_score
+2026-08-08 16:41:03,324 - [INFO] - 📊 X shape: (8977, 14)
+2026-08-08 16:41:03,324 - [INFO] - 🎯 y shape: (8977,)
+2026-08-08 16:41:03,324 - [INFO] - ✂️ Ma'lumotlar Train va Testga bo'linmoqda (80/20)...
+2026-08-08 16:41:03,325 - [INFO] - X_train: (7181, 14)
+2026-08-08 16:41:03,325 - [INFO] - X_test: (1796, 14)
+2026-08-08 16:41:03,325 - [INFO] - 📊 Skewness tekshirilmoqda...
+2026-08-08 16:41:03,327 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:41:03,328 - [INFO] - 14 - ustunlar ustida skeweness muvaffiqiyatli amalga oshirildi ✅.
+2026-08-08 16:41:03,328 - [INFO] - ✅ Skewness preprocessing tugadi.
+2026-08-08 16:41:03,328 - [INFO] - 
+==========================================
+2026-08-08 16:41:03,328 - [INFO] - 🩹 Imputation usuli boshlandi: MEAN
+2026-08-08 16:41:03,328 - [INFO] - ==========================================
+2026-08-08 16:41:03,328 - [INFO] - mean imputer saralandi
+2026-08-08 16:41:03,328 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:41:03,328 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:41:03,328 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:41:03,342 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:41:03,343 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:41:03,343 - [INFO] - ✅ mean imputation tugadi.
+2026-08-08 16:41:03,343 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:41:03,348 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:41:03,350 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:41:03,357 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:41:03,361 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:41:03,365 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:41:03,365 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:41:03,366 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:41:03,367 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:41:03,367 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:41:06,357 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:41:06,358 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:41:06,358 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:41:06,359 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:41:06,360 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:41:06,360 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:41:06,360 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:41:06,360 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:41:06,360 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:41:06,360 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mean | Scaling: Yes
+2026-08-08 16:41:06,362 - [INFO] -     → LinearRegresion (mean) | R2: 0.2826 | RMSE: 2.3452
+2026-08-08 16:41:06,362 - [INFO] - ⏳ Tuning: Ridge | Imputer: mean | Scaling: Yes
+2026-08-08 16:41:07,414 - [ERROR] - ❌ mean imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:41:07,416 - [INFO] - 
+==========================================
+2026-08-08 16:41:07,416 - [INFO] - 🩹 Imputation usuli boshlandi: MEDIAN
+2026-08-08 16:41:07,416 - [INFO] - ==========================================
+2026-08-08 16:41:07,416 - [INFO] - median imputer saralandi
+2026-08-08 16:41:07,416 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:41:07,416 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:41:07,416 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:41:07,425 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:41:07,427 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:41:07,427 - [INFO] - ✅ median imputation tugadi.
+2026-08-08 16:41:07,428 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:41:07,428 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:41:07,430 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:41:07,437 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:41:07,441 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:41:07,446 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:41:07,446 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:41:07,447 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:41:07,447 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:41:07,447 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:41:10,483 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:41:10,483 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:41:10,483 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:41:10,485 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:41:10,485 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:41:10,485 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:41:10,485 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:41:10,485 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:41:10,485 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:41:10,485 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: median | Scaling: Yes
+2026-08-08 16:41:10,488 - [INFO] -     → LinearRegresion (median) | R2: 0.1061 | RMSE: 2.6179
+2026-08-08 16:41:10,488 - [INFO] - ⏳ Tuning: Ridge | Imputer: median | Scaling: Yes
+2026-08-08 16:41:11,559 - [ERROR] - ❌ median imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:41:11,560 - [INFO] - 
+==========================================
+2026-08-08 16:41:11,560 - [INFO] - 🩹 Imputation usuli boshlandi: MICE
+2026-08-08 16:41:11,560 - [INFO] - ==========================================
+2026-08-08 16:41:11,560 - [INFO] - mice imputer saralandi
+2026-08-08 16:41:11,560 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:41:11,561 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:41:11,561 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:41:11,631 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:41:11,636 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:41:11,636 - [INFO] - ✅ mice imputation tugadi.
+2026-08-08 16:41:11,636 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:41:11,637 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:41:11,639 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:41:11,646 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:41:11,650 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:41:11,654 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:41:11,654 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:41:11,655 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:41:11,656 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:41:11,656 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:41:14,830 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:41:14,830 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:41:14,830 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:41:14,832 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:41:14,832 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:41:14,832 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:41:14,832 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:41:14,832 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:41:14,832 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:41:14,833 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: mice | Scaling: Yes
+2026-08-08 16:41:14,835 - [INFO] -     → LinearRegresion (mice) | R2: -2.6075 | RMSE: 5.2591
+2026-08-08 16:41:14,835 - [INFO] - ⏳ Tuning: Ridge | Imputer: mice | Scaling: Yes
+2026-08-08 16:41:15,870 - [ERROR] - ❌ mice imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:41:15,871 - [INFO] - 
+==========================================
+2026-08-08 16:41:15,871 - [INFO] - 🩹 Imputation usuli boshlandi: KNN
+2026-08-08 16:41:15,871 - [INFO] - ==========================================
+2026-08-08 16:41:15,871 - [INFO] - knn imputer saralandi
+2026-08-08 16:41:15,871 - [INFO] - Categorical ustunlar imputation yaratildi
+2026-08-08 16:41:15,872 - [INFO] - 7 raqamli ustunlar saralandi.
+2026-08-08 16:41:15,872 - [INFO] - 7 obyektli ustunlar saralandi.
+2026-08-08 16:41:16,470 - [INFO] - Train data muvaffaqiyatli transform qilindi.
+2026-08-08 16:41:16,607 - [INFO] - Test data muvaffaqiyatli transform qilindi.
+2026-08-08 16:41:16,607 - [INFO] - ✅ knn imputation tugadi.
+2026-08-08 16:41:16,607 - [INFO] - 🔍 Categorical ustunlar: ['release_country', 'genres', 'overview', 'director', 'writer', 'status', 'original_language']
+2026-08-08 16:41:16,608 - [INFO] - 🔹 Label Encoding: release_country (96 categories)
+2026-08-08 16:41:16,610 - [INFO] - 🔹 Label Encoding: genres (1399 categories)
+2026-08-08 16:41:16,617 - [INFO] - 🔹 Label Encoding: overview (6369 categories)
+2026-08-08 16:41:16,621 - [INFO] - 🔹 Label Encoding: director (4535 categories)
+2026-08-08 16:41:16,625 - [INFO] - 🔹 Label Encoding: writer (5317 categories)
+2026-08-08 16:41:16,626 - [INFO] - 🔹 One-Hot Encoding: status (4 categories)
+2026-08-08 16:41:16,626 - [INFO] - 🔹 Label Encoding: original_language (71 categories)
+2026-08-08 16:41:16,627 - [INFO] - ✅ Train uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:41:16,627 - [INFO] - 📊 Train encoded shape: (7181, 16)
+2026-08-08 16:41:19,841 - [INFO] - ✅ Test uchun Encoding muvaffaqiyatli amalga oshirildi.
+2026-08-08 16:41:19,841 - [INFO] - 📊 Test encoded shape: (1796, 16)
+2026-08-08 16:41:19,841 - [INFO] - ✅ Encoding tugadi. Train shape: (7181, 16), Test shape: (1796, 16)
+2026-08-08 16:41:19,842 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:41:19,843 - [INFO] - Train uchun muvaffaqiyatli Scaling amalga oshirildi.
+2026-08-08 16:41:19,843 - [INFO] - ✅ Scaling tugadi.
+2026-08-08 16:41:19,843 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:41:19,843 - [INFO] - ⚙️ Barcha modellar va ularning giperparametrlarGrid (tarmoqlari) tayyorlanmoqda...
+2026-08-08 16:41:19,843 - [INFO] - 🤖 8 ta model topildi.
+2026-08-08 16:41:19,843 - [INFO] - ⏳ Tuning: LinearRegresion | Imputer: knn | Scaling: Yes
+2026-08-08 16:41:19,845 - [INFO] -     → LinearRegresion (knn) | R2: -6.7359 | RMSE: 7.7013
+2026-08-08 16:41:19,845 - [INFO] - ⏳ Tuning: Ridge | Imputer: knn | Scaling: Yes
+2026-08-08 16:41:20,891 - [ERROR] - ❌ knn imputation usulida xatolik yuz berdi: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 490, in _process_worker
+    r = call_item()
+        ^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 607, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_validation.py", line 828, in _fit_and_score
+    estimator = estimator.set_params(**clone(parameters, safe=False))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 428, in set_params
+    raise ValueError(
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/murodjongafforov/Desktop/mp_last_project/scripts/main_pipeline.py", line 216, in main
+    grid_search.fit(X_tr, y_train)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/base.py", line 1403, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1131, in fit
+    self._run_search(evaluate_candidates, callback_ctx=root_callback_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1718, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid), callback_ctx=search_ctx)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/model_selection/_search.py", line 1080, in evaluate_candidates
+    out = parallel(
+          ^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/murodjongafforov/Desktop/mp_last_project/mp_last_project/lib/python3.12/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+ValueError: Invalid parameter 'params' for estimator Ridge(). Valid parameters are: ['alpha', 'copy_X', 'fit_intercept', 'max_iter', 'positive', 'random_state', 'solver', 'tol'].
+2026-08-08 16:41:20,894 - [INFO] - 💾 Barcha natijalar saqlandi: /Users/murodjongafforov/Desktop/mp_last_project/results/tables/all_imputation_model_results.csv
+2026-08-08 16:41:20,894 - [INFO] - 🏆 ENG YAXSHI MODEL SAQLANDI: /Users/murodjongafforov/Desktop/mp_last_project/models/best_improved_model.pkl
+2026-08-08 16:41:20,894 - [INFO] -     -Imputation: mean
+2026-08-08 16:41:20,894 - [INFO] -     - Model: LinearRegresion
+2026-08-08 16:41:20,894 - [INFO] -     - R2 Score: 0.2826

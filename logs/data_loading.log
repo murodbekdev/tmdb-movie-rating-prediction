@@ -1,0 +1,13 @@
+2026-07-30 17:00:26,366 - INFO - data_loader.py - ✅ Logging ishlayapti...
+2026-07-30 17:00:26,366 - ERROR - data_loader.py - ❌ Bu xatlik testi...
+2026-07-30 17:00:26,366 - WARNING - data_loader.py - 🚨 Bu ogohlantirish testi...
+2026-07-30 17:00:26,369 - INFO - data_loading.py - Dataset yuklandi: /Users/murodjongafforov/Desktop/mp_last_project/data/raw_data/tmdb_movies_1.csv
+2026-07-30 17:00:26,374 - INFO - data_loading.py - Dataset yuklandi: /Users/murodjongafforov/Desktop/mp_last_project/data/raw_data/tmdb_movies_2.csv
+2026-07-30 17:00:26,386 - INFO - data_loading.py - Dataset yuklandi: /Users/murodjongafforov/Desktop/mp_last_project/data/raw_data/tmdb_movies_3.csv
+2026-07-30 17:00:26,388 - INFO - data_loading.py - Dataset yuklandi: /Users/murodjongafforov/Desktop/mp_last_project/data/raw_data/tmdb_movies_4.csv
+2026-07-30 17:00:26,392 - INFO - data_loading.py - Dataset yuklandi: /Users/murodjongafforov/Desktop/mp_last_project/data/raw_data/tmdb_movies_5.csv
+2026-07-30 17:00:26,396 - INFO - data_loading.py - Dataset yuklandi: /Users/murodjongafforov/Desktop/mp_last_project/data/raw_data/tmdb_movies_6.csv
+2026-07-30 17:00:26,401 - INFO - data_loading.py - Dataset yuklandi: /Users/murodjongafforov/Desktop/mp_last_project/data/raw_data/tmdb_movies_7.csv
+2026-07-30 17:00:26,405 - INFO - data_loading.py - Dataset yuklandi: /Users/murodjongafforov/Desktop/mp_last_project/data/raw_data/tmdb_movies_8.csv
+2026-07-30 17:00:26,406 - INFO - data_loading.py - To'liq dataset yuklandi. Ko'rinishi: (8977, 16)
+2026-07-30 17:00:26,444 - INFO - data_loader.py - ✅ Muvaffaqiyatli birlashtirildi. Shape: (8977, 16)
