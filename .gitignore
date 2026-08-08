@@ -8,6 +8,11 @@ __pycache__/
 venv/
 env/
 
+# Data files
+*.csv
+*.xlsx
+*.xls
+
 # Jupyter
 .ipynb_checkpoints/
 
